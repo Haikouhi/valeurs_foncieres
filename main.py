@@ -29,7 +29,8 @@ def remplissage_dictionnaire(dictionnaire, fichier_text):
     return counter
 
 
-dict = creation_dictionnaire(recuperation_ligne1("valeurs_foncieres/valeursfoncieres-2018.txt"))
+dict = creation_dictionnaire(recuperation_ligne1("data_foncieres/valeursfoncieres-2018.txt"))
 
-print(remplissage_dictionnaire(dict, "valeurs_foncieres/valeursfoncieres-2018.txt"))
+print(remplissage_dictionnaire(dict, "data_foncieres/valeursfoncieres-2018.txt"))
 print(dict)
+

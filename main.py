@@ -14,23 +14,20 @@ def creation_dictionnaire(text_colonnes):
     return dictionnaire
 
 
-def remplissage_dictionnaire(dictionnaire, fichier_text):
-    counter = 0
+def remplissage_dictionnaire(fichier_text):
+    dictionnaire = creation_dictionnaire(recuperation_ligne1(fichier_text))
     with open(fichier_text, "r") as file:
         file.readline()
         lines = file.readlines(1000)
         for line in lines:
-            counter += 1
             list_contenu_ligne = line.strip().split("|")
             i = 0
             for k, v in dictionnaire.items():
                 v.append(list_contenu_ligne[i])
                 i += 1
-    return counter
+    return dictionnaire
 
 
-dict = creation_dictionnaire(recuperation_ligne1("data_foncieres/valeursfoncieres-2018.txt"))
+print(remplissage_dictionnaire("data_foncieres/valeursfoncieres-2018.txt"))
 
-print(remplissage_dictionnaire(dict, "data_foncieres/valeursfoncieres-2018.txt"))
-print(dict)
 
